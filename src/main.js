@@ -9,6 +9,7 @@ import {
   Assassin as ClassAssassin,
   Hero as ClassHero,
 } from "./oop/class/class_inheritance";
+import { runTasksDestructuring } from "./es/es6/destructuring";
 
 document.querySelector("#app").innerHTML = `
   <div>
@@ -62,12 +63,13 @@ document.querySelector("#app").innerHTML = `
 // assassin.hide();
 // assassin.attack();
 
-const assassin = new ClassAssassin({
-  health: 200,
-  damage: 66,
-});
-console.log(assassin);
+// const assassin = new ClassAssassin({
+//   health: 200,
+//   damage: 66,
+// });
+// console.log(assassin);
 
-assassin.hide()
-assassin.attack()
+// assassin.hide()
+// assassin.attack()
 
+runTasksDestructuring();
