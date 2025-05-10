@@ -76,8 +76,3 @@ document.querySelector("#app").innerHTML = `
 // runTasksDestructuring();
 
 // runTasksGenerators();
-
-console.log(Math.pow(7, 2));
-console.log(7**2);
-
-
