@@ -10,6 +10,7 @@ import {
   Hero as ClassHero,
 } from "./oop/class/class_inheritance";
 import { runTasksDestructuring } from "./es/es6/destructuring";
+import { runTasksGenerators } from "./es/es6/generators";
 
 document.querySelector("#app").innerHTML = `
   <div>
@@ -72,4 +73,11 @@ document.querySelector("#app").innerHTML = `
 // assassin.hide()
 // assassin.attack()
 
-runTasksDestructuring();
+// runTasksDestructuring();
+
+// runTasksGenerators();
+
+console.log(Math.pow(7, 2));
+console.log(7**2);
+
+
