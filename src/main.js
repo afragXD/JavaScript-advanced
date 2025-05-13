@@ -11,6 +11,7 @@ import {
 } from "./oop/class/class_inheritance";
 import { runTasksDestructuring } from "./es/es6/destructuring";
 import { runTasksGenerators } from "./es/es6/generators";
+import { runTasksPolyfills } from "./common/polyfills";
 
 document.querySelector("#app").innerHTML = `
   <div>
@@ -20,6 +21,9 @@ document.querySelector("#app").innerHTML = `
     <p>JS Advanced</p>
   </div>
 `;
+
+// тут просто тестирование всякой всячины
+
 
 // const hero = new Hero({
 //   name: 'Ivan',
@@ -76,3 +80,92 @@ document.querySelector("#app").innerHTML = `
 // runTasksDestructuring();
 
 // runTasksGenerators();
+
+// function test(a, b, c) {
+//   console.log(arguments);
+
+//   for (let a in arguments) {
+//     console.log(a);
+//   }
+
+//   for (let a of arguments) {
+//     console.log(a);
+//   }
+// }
+
+// test('a', 'b', 'c');
+
+// function fn(a = 5) {
+//   console.log(a);
+// }
+
+// fn(null);
+// fn(undefined);
+
+// function fn() {
+//   console.log(this);
+// }
+// fn();
+
+// const { a: b = 4 } = { b: 3 };
+// // console.log(a);
+// console.log(b);
+// const key = '123'
+// const i = '567'
+// const obj = {[key] : [i, 5]}
+// // вытащи деструктуризацией i
+// const { [key] : [res] } = obj;
+// console.log(res);
+
+// const obj = {
+// 	a: () => {
+//     console.log(this);
+//   },
+// 	b: function () {
+//     console.log(this);
+//   },
+// 	c(){
+//     console.log(this);
+//   },
+// }
+// console.log(obj.b.prototype);
+// console.log(obj.c.prototype);
+
+const map = new Map();
+let obj = { a: 5 };
+map.set(obj, 10);
+obj = null;
+console.log(map) //что будет в консоли
+
+// const arr = [1, 2, 3];
+// const iter = arr[Symbol.iterator]()
+// console.log(iter.next());
+// console.log(iter.next());
+// console.log(iter.next());
+// console.log(iter.next());
+
+// function fn(a, b, c) {
+//   const iter = arguments[Symbol.iterator]();
+//   console.log(iter.next());
+//   console.log(iter.next());
+//   console.log(iter.next());
+//   console.log(iter.next());
+// }
+
+// fn('a', 'b', 'c');
+
+
+runTasksPolyfills();
+
+const axaxa = ['a', 'b', 'c'];
+
+axaxa.myForEach((value, index, array) => {
+  console.log(value, index, array);
+});
+
+const test = axaxa.myMap((value, index, array) => {
+  return `${value} XD!`
+});
+
+console.log(test);
+
