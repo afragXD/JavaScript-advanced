@@ -19,6 +19,13 @@ document.querySelector("#app").innerHTML = `
       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
     </a>
     <p>JS Advanced</p>
+    <div id="test123" class="test">
+      <div id="a1">1</div>
+      <div id="a2">2</div>
+      <div id="a3">3</div>
+      <div id="a4">4</div>
+      <div id="a5">5</div>
+    </div>
   </div>
 `;
 
@@ -155,17 +162,41 @@ console.log(map) //что будет в консоли
 // fn('a', 'b', 'c');
 
 
-runTasksPolyfills();
+// runTasksPolyfills();
 
-const axaxa = ['a', 'b', 'c'];
+// const axaxa = ['a', 'b', 'c'];
 
-axaxa.myForEach((value, index, array) => {
-  console.log(value, index, array);
-});
+// axaxa.myForEach((value, index, array) => {
+//   console.log(value, index, array);
+// });
 
-const test = axaxa.myMap((value, index, array) => {
-  return `${value} XD!`
-});
+// const test = axaxa.myMap((value, index, array) => {
+//   return `${value} XD!`
+// });
 
-console.log(test);
+// console.log(test);
 
+// const div = document.querySelector('.test');
+
+// const newDiv = document.createElement('div');
+// newDiv.textContent = 'Новый div';
+// div.append(newDiv)
+
+// console.log(div.hasChildNodes());
+
+const div = document.getElementById('test123');
+console.log(div.closest('#test123'));
+
+console.log(div.firstChild);
+console.log(div.lastChild);
+console.log(div.childNodes);
+console.log(div.parentNode);
+console.log(div.previousSibling);
+console.log(div.nextSibling);
+
+console.log(div.firstElementChild);
+console.log(div.lastElementChild);
+console.log(div.children);
+console.log(div.parentNode);
+console.log(div.previousElementSibling);
+console.log(div.nextElementSibling);
