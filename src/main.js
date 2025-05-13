@@ -187,16 +187,22 @@ console.log(map) //что будет в консоли
 const div = document.getElementById('test123');
 console.log(div.closest('#test123'));
 
-console.log(div.firstChild);
-console.log(div.lastChild);
-console.log(div.childNodes);
-console.log(div.parentNode);
-console.log(div.previousSibling);
-console.log(div.nextSibling);
+function logTar(event) {
+  console.log(event.target, this);
+};
 
-console.log(div.firstElementChild);
-console.log(div.lastElementChild);
-console.log(div.children);
-console.log(div.parentNode);
-console.log(div.previousElementSibling);
-console.log(div.nextElementSibling);
+const outerDiv = document.createElement('div');
+const innerDiv = document.createElement('div');
+const button = document.createElement('button');
+button.textContent = 'Click -_-';
+
+innerDiv.appendChild(button);
+outerDiv.appendChild(innerDiv);
+
+div.after(outerDiv);
+
+outerDiv.addEventListener('click', logTar);
+innerDiv.addEventListener('click', logTar, true);
+button.addEventListener('click', logTar, true);
+
+console.log(Object.getPrototypeOf(button));
