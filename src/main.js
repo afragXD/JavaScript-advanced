@@ -184,25 +184,25 @@ console.log(map) //что будет в консоли
 
 // console.log(div.hasChildNodes());
 
-const div = document.getElementById('test123');
-console.log(div.closest('#test123'));
+const main = document.getElementById('test123');
 
 function logTar(event) {
   console.log(event.target, this);
 };
 
-const outerDiv = document.createElement('div');
-const innerDiv = document.createElement('div');
-const button = document.createElement('button');
+const outerDiv = document.createElement('div'); // самый верхний контейнер
+const innerDiv = document.createElement('div'); // контейнер внутри outerDiv
+const button = document.createElement('button'); // кнопка внутри innerDiv
 button.textContent = 'Click -_-';
 
+// добавляем элементы
 innerDiv.appendChild(button);
 outerDiv.appendChild(innerDiv);
+main.after(outerDiv);
 
-div.after(outerDiv);
-
-outerDiv.addEventListener('click', logTar);
-innerDiv.addEventListener('click', logTar, true);
-button.addEventListener('click', logTar, true);
+// вешаем слушатели
+outerDiv.addEventListener('click', logTar, true);
+innerDiv.addEventListener('click', logTar);
+button.addEventListener('click', logTar);
 
 console.log(Object.getPrototypeOf(button));
